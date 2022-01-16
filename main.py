@@ -1,5 +1,5 @@
 # words_alpha.txt file from: https://github.com/dwyl/english-words/blob/master/words_alpha.txt
-# words_alpha contains many words not in the spellingbee dictionary
+# words_alpha contains many words not in the SpellingBee dictionary
 
 # popular.txt from https://github.com/dolph/dictionary/blob/master/popular.txt
 # too restrictive
@@ -9,18 +9,17 @@
 
 import re
 
-with open('word.list.txt') as f:
+with open('words_alpha.txt') as f:
     words = f.read().splitlines()
-# center = input('Enter Center Character: ')
-# surrounding = input('Enter the Surrounding Characters')
+# center = input('Enter Center Character: ').lower()
+# surrounding = input('Enter the Surrounding Characters: ').lower()
 center = 'h'
-surrounding = 'crutao'
+surrounding = 'cnukde'
 
 four_or_more = '{4,}'
 p = re.compile(f'^[{center + surrounding}]{four_or_more}$')
 words = [word for word in words if center in word and p.match(word)]
 print(words)
 print(f'There are {len(words)} words in the list')
-
-
-
+# words = [word for word in words if word.startswith('h') and len(word) == 8]
+# print(words)
