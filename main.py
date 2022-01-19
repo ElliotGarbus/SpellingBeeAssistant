@@ -1,3 +1,4 @@
+import configstartup
 from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.boxlayout import BoxLayout
@@ -224,6 +225,11 @@ class SpellingBeeAssistantApp(App):
 
     def on_start(self):
         self.root.load_dictionary()
+
+    def open_settings(self, *largs):
+        pass  # do not allow kivy settings to be opened
+
+
 
 
 SpellingBeeAssistantApp().run()
