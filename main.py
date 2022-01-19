@@ -28,6 +28,7 @@ RootLayout:
         size_hint_y: None
         height: 48
         Label:
+        Label:
             text: 'Dictionary: '
             size_hint_x: None
             width: self.texture_size[0] + 10
@@ -36,6 +37,7 @@ RootLayout:
             text: 'popular.txt'
             values: ['All', 'popular.txt', 'sowpods.txt', 'words_alpha.txt', 'word.list.txt']
             on_text: root.load_dictionary()
+        Label:
     Seperator:
     BoxLayout:
         spacing: 10
@@ -216,17 +218,12 @@ class RootLayout(BoxLayout):
         self.show_words(self.candidates)
 
 
-
-
-
 class SpellingBeeAssistantApp(App):
     def build(self):
         return Builder.load_string(kv)
 
     def on_start(self):
         self.root.load_dictionary()
-
-
 
 
 SpellingBeeAssistantApp().run()
