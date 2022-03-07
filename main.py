@@ -55,6 +55,7 @@ RootLayout:
             size_hint_x: None
             width: center_letter_label.width
             on_text: root.get_words()
+            focus: True
         Label:
             text: 'Surrounding Letters: '
             size_hint_x: None
@@ -130,6 +131,9 @@ class UniqueLettersInput(TextInput):
         if not c.isalpha() or c.upper() in self.text or len(self.text) >= self.max_characters:
             return ''
         else:
+            if len(self.text) + 1 == self.max_characters:
+                w = self.get_focus_next()
+                w.focus = True
             return c.upper()
 
 
